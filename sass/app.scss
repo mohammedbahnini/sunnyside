@@ -1,0 +1,507 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 18px;
+}
+body {
+  font-family: "Barlow", sans-serif;
+  /*  font-family: 'Fraunces', serif;*/
+  max-width: 106.66667rem;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 80rem;
+  padding: 0 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  @include sm-and-down {
+    padding: 0 1.33333rem;
+  }
+}
+
+header {
+  height: 93vh;
+
+  padding-top: 2rem;
+  background: url("../images/desktop/image-header.jpg") no-repeat center bottom /
+    cover;
+  @include sm-and-down {
+    height: 29.88888rem;
+    background: url("../images/mobile/image-header.jpg") no-repeat center /
+      cover;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6.5rem;
+    .logo {
+      width: 6.8888rem;
+      position: relative;
+    }
+  }
+  .menu-bars {
+    display: none;
+    i {
+      color: white;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+    @include sm-and-down {
+      display: block;
+    }
+  }
+  nav {
+    @include sm-and-down {
+      position: absolute;
+      width: 100%;
+      padding: 0 1.3333rem;
+      left: 0;
+      top: 8rem;
+      z-index: 2;
+      transform: scale(0);
+      opacity: 0;
+      transform-origin: right top;
+      transition: $transition-timing;
+      &.visible {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 2.75rem;
+      @include sm-and-down {
+        background-color: white;
+        flex-direction: column;
+        padding: 2.5rem 0;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          bottom: 100%;
+          border: 1rem solid transparent;
+          border-right-color: white;
+          border-bottom-color: white;
+        }
+      }
+      li a {
+        color: white;
+        font-size: 0.8rem;
+        display: block;
+        @include sm-and-down {
+          color: $neutral-blue-2;
+        }
+        &.contact {
+          padding: 1.2em 2em;
+          font-family: "Fraunces", serif;
+          color: $neutral-blue-1;
+          background-color: white;
+          border-radius: 10rem;
+          text-transform: uppercase;
+          font-weight: bold;
+          transition: $transition-timing;
+          &:hover {
+            background-color: rgba(111, 207, 255, 1);
+            color: white;
+          }
+          @include sm-and-down {
+            background-color: $primary-yellow;
+          }
+        }
+      }
+    }
+  }
+  .hero-text {
+    font-family: "Fraunces", serif;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-size: 2.5rem;
+    letter-spacing: 0.2em;
+    font-weight: 900;
+    position: relative;
+    @include sm-and-down {
+      font-size: 2rem;
+    }
+    &::after {
+      content: url("../images/icon-arrow-down.svg");
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -5.5em;
+      animation: animate-arrow 2s infinite;
+      @include sm-and-down {
+        animation: none;
+        top: calc(100% + 1rem);
+      }
+    }
+  }
+}
+
+@keyframes animate-arrow {
+  0% {
+    bottom: -5.5em;
+  }
+  50% {
+    bottom: -4em;
+  }
+  100% {
+    bottom: -5.5em;
+  }
+}
+
+.row {
+  display: flex;
+  @include sm-and-down {
+    flex-direction: column;
+  }
+  &.reverse {
+    flex-direction: row-reverse;
+    @include sm-and-down {
+      flex-direction: column;
+    }
+    .content {
+      padding-right: 6.4rem;
+      padding-top: 9.5rem;
+      padding-bottom: 9.5rem;
+      justify-content: end;
+      @include sm-and-down {
+        padding: 4rem 1.3333rem;
+      }
+    }
+  }
+
+  .content,
+  .illustration {
+    width: 50%;
+    @include sm-and-down {
+      width: 100%;
+    }
+  }
+
+  .illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .content {
+    padding-left: 6.4rem;
+    padding-top: 9.5rem;
+    padding-bottom: 9.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    @include sm-and-down {
+      padding: 4rem 1.3333rem;
+    }
+
+    .content-body {
+      max-width: 24.444rem;
+      @include sm-and-down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .title {
+        font-family: "Fraunces", serif;
+        font-size: 2.5rem;
+        color: $neutral-blue-1;
+        margin-bottom: 1.75rem;
+        @include sm-and-down {
+          font-size: 2rem;
+          text-align: center;
+        }
+      }
+      p {
+        color: $neutral-blue-3;
+        line-height: 1.75em;
+        font-size: 0.95rem;
+        margin-bottom: 1.75rem;
+        @include sm-and-down {
+          text-align: center;
+        }
+      }
+      a {
+        color: $neutral-blue-1;
+        font-family: "Fraunces", serif;
+        position: relative;
+        display: inline-block;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.transform {
+  .content .content-body {
+    a {
+      &:hover {
+        &::after {
+          background-color: $primary-yellow;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        bottom: -0.125rem;
+        width: 120%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        background-color: lighten($primary-yellow, 35%);
+        border-radius: 5rem;
+        transition: $transition-timing;
+      }
+    }
+  }
+}
+
+.stand-out {
+  .content .content-body {
+    a {
+      &:hover {
+        &::after {
+          background-color: $primary-red;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        bottom: -0.125rem;
+        width: 120%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        background-color: lighten($primary-red, 25%);
+        border-radius: 5rem;
+        transition: $transition-timing;
+      }
+    }
+  }
+}
+
+.split {
+  display: flex;
+  min-height: 33.33333rem;
+  @include sm-and-down {
+    flex-direction: column;
+  }
+  > * {
+    width: 50%;
+    position: relative;
+    @include sm-and-down {
+      width: 100%;
+    }
+
+    .graphic-design,
+    .photography {
+      position: relative;
+    }
+    .illustration {
+      height: 100%;
+    }
+    .illustration img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .content {
+      position: absolute;
+      bottom: 3.333rem;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 18rem;
+      text-align: center;
+      @include sm-and-down {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1.33333rem;
+        transform: none;
+        left: 0;
+        right: 0;
+      }
+      .title {
+        font-family: "Fraunces", serif;
+        font-size: 2.25rem;
+        color: $neutral-blue-1;
+        margin-bottom: 1.75rem;
+        @include sm-and-down {
+          font-size: 1.5rem;
+        }
+      }
+      p {
+        color: $neutral-blue-2;
+        line-height: 1.5em;
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
+// testimonials
+.testimonials {
+  padding: 8.8rem 0;
+  @include sm-and-down {
+    padding: 6.5rem 0;
+  }
+  .title {
+    text-align: center;
+    font-family: "Fraunces", serif;
+    text-transform: uppercase;
+    color: $neutral-blue-4;
+    margin-bottom: 4.5rem;
+    letter-spacing: 0.2em;
+    @include sm-and-down {
+      font-size: 1rem;
+    }
+  }
+  .testimonials-group {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    max-width: 60.95rem;
+    margin-left: auto;
+    margin-right: auto;
+    @include sm-and-down {
+      flex-direction: column;
+    }
+    .item {
+      @include sm-and-down {
+        padding: 0 1.333333rem;
+      }
+      .profile {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 4rem;
+        aspect-ratio: 1;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3.5rem;
+        @include sm-and-down {
+          margin-bottom: 2.222rem;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .content {
+        margin-bottom: 3.5rem;
+        @include sm-and-down {
+          margin-bottom: 2.222rem;
+        }
+        p {
+          color: $neutral-blue-3;
+          text-align: center;
+          line-height: 1.5em;
+        }
+      }
+      .footer {
+        .name,
+        .role {
+          text-align: center;
+        }
+        .name {
+          font-family: "Fraunces", serif;
+          color: $neutral-blue-1;
+          margin-bottom: 1rem;
+          @include sm-and-down {
+            margin-bottom: 0.5rem;
+          }
+        }
+        .role {
+          font-size: 0.8rem;
+          color: $neutral-blue-4;
+          @include sm-and-down {
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// gallery
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  @include sm-and-down {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-item {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// footer *
+footer {
+  padding: 4rem 0;
+  background-color: $primary-cyan;
+  .logo {
+    width: 9.5rem;
+    height: 1.8rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $primary-dark-cyan;
+    mask: url("../images/logo.svg") no-repeat center / contain;
+    margin-bottom: 2.5rem;
+  }
+
+  .links {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 5rem;
+    li a {
+      color: $primary-dark-cyan;
+      font-size: 0.8rem;
+      transition: $transition-timing;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .social-media {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1.5rem;
+    li a {
+      color: $primary-dark-cyan;
+      font-size: 1.2rem;
+      transition: $transition-timing;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

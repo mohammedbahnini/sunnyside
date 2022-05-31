@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/app.css" />
+    <title>Frontend Mentor | Sunnyside agency landing page</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="images/logo.svg" alt="Logo" />
+        </div>
+        <nav id="main-menu">
+          <ul>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Services</a>
+            </li>
+            <li>
+              <a href="#">Projects</a>
+            </li>
+            <li>
+              <a href="#" class="contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-bars" data-menu="main-menu">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+
+      <h1 class="hero-text">We are creatives</h1>
+    </header>
+
+    <main>
+      <section class="row transform reverse">
+        <div class="illustration">
+          <picture>
+            <source
+              media="(min-width : 769px)"
+              srcset="images/desktop/image-transform.jpg 720w"
+            />
+            <source srcset="images/mobile/image-transform.jpg 725w" />
+            <img src="images/desktop/image-transform.jpg" alt="Egg" />
+          </picture>
+        </div>
+        <div class="content">
+          <div class="content-body">
+            <h2 class="title">Transform your brand</h2>
+            <p>
+              We are a full-service creative agency specializing in helping
+              brands grow fast. Engage your clients through compelling visuals
+              that do most of the marketing for you.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="row stand-out">
+        <div class="illustration">
+          <picture>
+            <source
+              media="(min-width : 769px)"
+              srcset="images/desktop/image-stand-out.jpg 720w"
+            />
+            <source srcset="images/mobile/image-stand-out.jpg 725w" />
+            <img src="images/desktop/image-stand-out.jpg" alt="Stand Out" />
+          </picture>
+        </div>
+        <div class="content">
+          <div class="content-body">
+            <h2 class="title">Stand out to the right audience</h2>
+            <p>
+              Using a collaborative formula of designers, researchers,
+              photographers, videographers, and copywriters, we’ll build and
+              extend your brand in digital places.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="split">
+        <div class="graphic-design">
+          <div class="illustration">
+            <picture>
+              <source
+                media="(min-width : 769px)"
+                srcset="images/desktop/image-graphic-design.jpg 720w"
+              />
+              <source srcset="images/mobile/image-graphic-design.jpg 750w" />
+              <img
+                src="images/desktop/image-graphic-design.jpg"
+                alt="Graphic design"
+              />
+            </picture>
+          </div>
+          <div class="content">
+            <h2 class="title">Graphic design</h2>
+            <p>
+              Great design makes you memorable. We deliver artwork that
+              underscores your brand message and captures potential clients’
+              attention.
+            </p>
+          </div>
+        </div>
+        <div class="photography">
+          <div class="illustration">
+            <picture>
+              <source
+                media="(min-width : 769px)"
+                srcset="images/desktop/image-photography.jpg 720w"
+              />
+              <source srcset="images/mobile/image-photography.jpg 750w" />
+              <img
+                src="images/desktop/image-photography.jpg"
+                alt="Graphic design"
+              />
+            </picture>
+          </div>
+          <div class="content">
+            <h2 class="title">Photography</h2>
+            <p>
+              Increase your credibility by getting the most stunning,
+              high-quality photos that improve your business image.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <h2 class="title">Client testimonials</h2>
+        <div class="testimonials-group">
+          <div class="item">
+            <div class="profile">
+              <img src="images/image-emily.jpg" alt="" />
+            </div>
+            <div class="content">
+              <p>
+                We put our trust in Sunnyside and they delivered, making sure
+                our needs were met and deadlines were always hit.
+              </p>
+            </div>
+            <div class="footer">
+              <p class="name">Emily R.</p>
+              <p class="role">Marketing Director</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="profile">
+              <img src="images/image-thomas.jpg" alt="" />
+            </div>
+            <div class="content">
+              <p>
+                Sunnyside’s enthusiasm coupled with their keen interest in our
+                brand’s success made it a satisfying and enjoyable experience.
+              </p>
+            </div>
+            <div class="footer">
+              <p class="name">Thomas S.</p>
+              <p class="role">Chief Operating Officer</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="profile">
+              <img src="images/image-jennie.jpg" alt="" />
+            </div>
+            <div class="content">
+              <p>
+                Incredible end result! Our sales increased over 400% when we
+                worked with Sunnyside. Highly recommended!
+              </p>
+            </div>
+            <div class="footer">
+              <p class="name">Jennie F.</p>
+              <p class="role">Business Owner</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid">
+        <div class="grid-item">
+          <picture>
+            <source
+              media="(min-width : 769px)"
+              srcset="images/desktop/image-gallery-milkbottles.jpg 720w"
+            />
+            <source srcset="images/mobile/image-gallery-milkbottles.jpg 376w" />
+            <img
+              src="images/desktop/image-gallery-milkbottles.jpg"
+              alt="Milkbottles"
+            />
+          </picture>
+        </div>
+
+        <div class="grid-item">
+          <picture>
+            <source
+              media="(min-width  : 769px)"
+              srcset="images/desktop/image-gallery-orange.jpg 720w"
+            />
+            <source srcset="images/mobile/image-gallery-orange.jpg 376w" />
+            <img src="images/desktop/image-gallery-orange.jpg" alt="Orange" />
+          </picture>
+        </div>
+
+        <div class="grid-item">
+          <picture>
+            <source
+              media="(min-width  : 769px)"
+              srcset="images/desktop/image-gallery-cone.jpg 720w"
+            />
+            <source srcset="images/mobile/image-gallery-cone.jpg 376w" />
+            <img src="images/desktop/image-gallery-cone.jpg" alt="Orange" />
+          </picture>
+        </div>
+
+        <div class="grid-item">
+          <picture>
+            <source
+              media="(min-width  : 769px)"
+              srcset="images/desktop/image-gallery-sugarcubes.jpg 720w"
+            />
+            <source srcset="images/mobile/image-gallery-sugar-cubes.jpg 376w" />
+            <img
+              src="images/mobile/image-gallery-sugar-cubes.jpg"
+              alt="Sugare"
+            />
+          </picture>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="logo green"></div>
+      <ul class="links">
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Services</a>
+        </li>
+        <li>
+          <a href="#">Projects</a>
+        </li>
+      </ul>
+
+      <ul class="social-media">
+        <li>
+          <a href="#" aria-label="facebook">
+            <i class="fa-brands fa-facebook-square"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="twitter">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="pintrest">
+            <i class="fa-brands fa-pinterest"></i>
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+    <script>
+      const menu_btn = document.querySelector(".menu-bars");
+      menu_btn.addEventListener("click", () => {
+        const menu = document.querySelector(`#${menu_btn.dataset.menu}`);
+        menu.classList.toggle("visible");
+      });
+    </script>
+  </body>
+</html>
